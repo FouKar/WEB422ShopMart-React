@@ -2,6 +2,7 @@ import React from "react";
 import { useContext, useEffect } from "react";
 import ShopContext from "../context/ShopContext";
 import { Container } from "react-bootstrap";
+import ".env";
 
 const RegistrationForm = () => {
   const {
@@ -34,7 +35,7 @@ const RegistrationForm = () => {
   } = useContext(ShopContext);
   const onCreateAccount = (evt) => {
     evt.preventDefault();
-    fetch("https://web422-restfulapi.herokuapp.com/customers/register", {
+    fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

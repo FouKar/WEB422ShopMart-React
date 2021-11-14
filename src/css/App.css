@@ -1,0 +1,105 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.headerLink {
+  font-family: "Montserrat", sans-serif !important;
+  text-decoration: bold !important;
+  font-weight: 900 !important;
+  font-size: 1.2rem !important;
+}
+.navLinkText {
+  color: #d63031 !important;
+}
+.heroContainer {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+.carouselLbl {
+  top: 40% !important;
+
+  opacity: 0.7 !important;
+  background-color: black !important;
+}
+.carouselLblT {
+  top: 50%;
+  height: 100% !important;
+  background-color: black !important;
+  opacity: 0.7;
+}
+.capTitle {
+  text-decoration: bold !important;
+  font-weight: 900 !important;
+  font-family: "Montserrat", sans-serif !important;
+  color: #d63031 !important;
+}
+.capP {
+  font-weight: 100 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.capPTwo {
+  font-weight: 500 !important;
+  font-family: "Montserrat", sans-serif !important;
+  color: #d63031 !important;
+}
+.regHead {
+  font-family: "Montserrat", sans-serif !important;
+  color: #d63031 !important;
+  text-decoration: bold !important;
+  font-weight: 900 !important;
+}
+label {
+  color: #00b894;
+}
+.btnReg {
+  background-color: #00b894 !important;
+}
+.btnG {
+  color: white !important;
+  background-color: #db4437 !important;
+}
+.btnF {
+  color: white !important;
+  background-color: #3b5998 !important;
+}
+.error {
+  font-weight: 500 !important;
+  font-family: "Montserrat", sans-serif !important;
+  color: #d63031 !important;
+}

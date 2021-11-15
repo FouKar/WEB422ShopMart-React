@@ -11,7 +11,7 @@ import {
 
 export const Header = () => {
   return (
-    <Navbar bg="transparent" expand="lg" className="mx-auto">
+    <Navbar bg="transparent" expand="lg" className="mx-auto mt-0">
       <Container>
         <Navbar.Brand href="/">
           <img

@@ -15,6 +15,7 @@ function App() {
   const [bestSelling, setBestSelling] = useState([{}]);
   const [page, setPage] = useState([{}]);
   const [category, setCategory] = useState([{}]);
+  const [categories, setCategories] = useState([]);
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -67,6 +68,8 @@ function App() {
           setErrorPass,
           formData,
           setFormData,
+          categories,
+          setCategories,
         }}
       >
         <Routes>

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ProductCategorize from "../components/ProductCategorize";
 
 import Hero from "../components/Hero";
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
         <Header />
         <Hero />
       </div>
+      <ProductCategorize />
       <Footer />
     </>
   );

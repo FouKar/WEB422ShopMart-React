@@ -2,6 +2,7 @@ import React from "react";
 import { useContext, useEffect } from "react";
 import ShopContext from "../context/ShopContext";
 import { Container } from "react-bootstrap";
+require("dotenv").config({ path: "../../.env" });
 
 const RegistrationForm = () => {
   const {

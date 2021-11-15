@@ -30,8 +30,6 @@ const RegistrationForm = () => {
     setErrorPass,
     errorPhoneNum,
     setErrorPhoneNum,
-    formData,
-    setFormData,
   } = useContext(ShopContext);
   const onCreateAccount = (evt) => {
     evt.preventDefault();

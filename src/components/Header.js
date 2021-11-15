@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+
 import {
   Navbar,
   Nav,
@@ -8,7 +8,6 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (

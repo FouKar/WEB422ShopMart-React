@@ -2,7 +2,7 @@ import React from "react";
 import { useContext, useEffect } from "react";
 import ShopContext from "../context/ShopContext";
 import { Container } from "react-bootstrap";
-import ".env";
+require("dotenv").config({ path: "../../.env" });
 
 const RegistrationForm = () => {
   const {
@@ -35,7 +35,7 @@ const RegistrationForm = () => {
   } = useContext(ShopContext);
   const onCreateAccount = (evt) => {
     evt.preventDefault();
-    fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}`, {
+    fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/customers/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,6 +52,13 @@ const RegistrationForm = () => {
       .then((json) => {
         alert(`Customer created:
         ${json.data.fName} ${json.data.lName} `);
+        setFname("");
+        setLname("");
+        setEmail("");
+        setPass("");
+        setPhoneNumOne("");
+        setPhoneNumTwo("");
+        setPhoneNum([]);
       })
       .catch((err) => {
         console.log({ fname, lname, email, pass, phoneNum });

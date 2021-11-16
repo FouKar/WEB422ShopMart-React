@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/utilities.css";
+import "@splidejs/splide/dist/css/splide.min.css";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+
 import HomePage from "./pages/HomePage";
 import ProductCategory from "./pages/ProductCategory";
 import ProductDescription from "./pages/ProductDescription";

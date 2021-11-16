@@ -12,21 +12,19 @@ const ProductCategorize = () => {
       .get(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/categories`)
       .then((res) => res.data)
       .then((res) => {
-        console.log(res.data);
         setCategories(res.data);
-        console.log(categories);
       })
       .catch((err) => {
         console.log(`Error ${err}`);
       });
-  }, []);
+  }, [categories]);
   return (
     <>
       <div class="title_lines">Product Categories</div>
-      <Container className="d-flex flex-row flex-wrap justify-content-between mt-5 mb-5 prodCat">
+      <Container className="d-flex flex-row flex-wrap  mt-5 mb-5 prodCat justify-content-center">
         {categories.map((cat, index) => {
           return (
-            <div className="d-flex flex-column align-items-center">
+            <div className="d-flex flex-column align-items-center ">
               <img
                 src={`/${index}cat.jpeg`}
                 height="180px"

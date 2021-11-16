@@ -15,8 +15,8 @@ export const Header = () => {
       <Container>
         <Navbar.Brand href="/">
           <img
-            height="150"
-            width="150"
+            height="100"
+            width="100"
             src="/logo.svg"
             className="d-inline-block align-top"
             alt="ShopMart logo"

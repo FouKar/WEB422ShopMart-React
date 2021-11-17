@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.1.1",
     "@splidejs/react-splide": "^0.6.10",
     "@splidejs/splide": "^3.3.1",
     "@testing-library/jest-dom": "^5.11.4",

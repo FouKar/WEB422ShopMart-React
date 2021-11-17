@@ -135,3 +135,6 @@ body {
 .catImg {
   border-radius: 50%;
 }
+.priceCard {
+  color: #d63031 !important;
+}

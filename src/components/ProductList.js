@@ -22,11 +22,13 @@ const ProductList = () => {
     <Container className="d-flex flex-wrap flex-row">
       {products.map((product, index) => {
         return (
-          <Card sx={{ maxWidth: 345 }} className="mx-auto mb-5">
+          <Card
+            sx={{ maxWidth: 345 }}
+            className="mx-auto mb-5 d-flex flex-column justify-content-around"
+          >
             <CardActionArea>
               <CardMedia
                 component="img"
-                height="345"
                 image={product.photo}
                 alt={product.name}
               />
@@ -36,7 +38,7 @@ const ProductList = () => {
                 </Typography>
                 <Typography
                   gutterBottom
-                  variant="h6"
+                  variant="body1"
                   component="div"
                   className="priceCard"
                 >

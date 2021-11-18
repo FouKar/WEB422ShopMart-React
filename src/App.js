@@ -15,6 +15,16 @@ import ShopContext from "./context/ShopContext";
 
 function App() {
   const [products, setProducts] = useState([{}]);
+  const [product, setProduct] = useState({
+    _id: "",
+    name: "",
+    price: "",
+    description: "",
+    category: "",
+    quantity: "",
+    bestseller: "",
+    photo: "",
+  });
   const [bestSelling, setBestSelling] = useState([{}]);
   const [page, setPage] = useState([{}]);
   const [category, setCategory] = useState([{}]);
@@ -37,6 +47,8 @@ function App() {
     <Router>
       <ShopContext.Provider
         value={{
+          product,
+          setProduct,
           products,
           setProducts,
           bestSelling,
@@ -79,6 +91,10 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
 
           <Route path="/products/all" element={<ProductListing />}></Route>
+          <Route
+            path="/products/product/:id"
+            element={<ProductDescription />}
+          ></Route>
 
           <Route path="/register" element={<RegistrationPage />}></Route>
 

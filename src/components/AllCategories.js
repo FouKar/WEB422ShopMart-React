@@ -1,5 +1,4 @@
-import React, { useEffect, useContext } from "react";
-import axios from "axios";
+import React, { useEffect, useState, useContext } from "react";
 import ShopContext from "../context/ShopContext";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -8,30 +7,23 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-const ProductList = () => {
-  const { products, setProducts } = useContext(ShopContext);
+const AllCategories = () => {
+  const { categories, setCategories } = useContext(ShopContext);
   useEffect(() => {
-    axios(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/all`)
-      .then((res) => res.data)
-      .then((res) => {
-        setProducts(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, [products]);
+    axios(`${process.env.RECAT_APP_BACK_END_API_DOMAIN}/products/categories`);
+  });
   return (
     <Container className="d-flex flex-wrap flex-row">
-      {products.map((product, index) => {
+      {categories.map((category, index) => {
         return (
           <Card
             sx={{ maxWidth: 345 }}
             className="mx-auto mb-5 d-flex flex-column justify-content-around"
           >
             <CardActionArea className="">
-              <Link
-                to={`/products/product/${product._id}`}
-                className="linkCard"
-              >
+              <Link to={`/products/${product._id}`} className="linkCard">
                 <CardMedia
                   component="img"
                   image={product.photo}
@@ -62,4 +54,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default AllCategories;

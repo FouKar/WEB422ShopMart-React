@@ -17,24 +17,26 @@ const ProductCategorize = () => {
       .catch((err) => {
         console.log(`Error ${err}`);
       });
-  }, [categories]);
+  }, []);
   return (
     <>
       <div class="title_lines">Product Categories</div>
       <Container className="d-flex flex-row flex-wrap  mt-5 mb-5 prodCat justify-content-center">
         {categories.map((cat, index) => {
-          return (
-            <div className="d-flex flex-column align-items-center ">
-              <img
-                src={`/${index}cat.jpeg`}
-                height="180px"
-                width="180px"
-                alt="category Image"
-                className="catImg"
-              />
-              <h5>{cat}</h5>
-            </div>
-          );
+          while (index < 6) {
+            return (
+              <div className="d-flex flex-column align-items-center ">
+                <img
+                  src={`/${index}cat.jpeg`}
+                  height="180px"
+                  width="180px"
+                  alt="category Image"
+                  className="catImg"
+                />
+                <h5>{cat}</h5>
+              </div>
+            );
+          }
         })}
       </Container>
     </>

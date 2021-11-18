@@ -138,3 +138,6 @@ body {
 .priceCard {
   color: #d63031 !important;
 }
+.linkCard {
+  text-decoration: none !important;
+}

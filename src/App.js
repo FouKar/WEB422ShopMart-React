@@ -28,7 +28,7 @@ function App() {
   });
   const [productsByCat, setProductsByCat] = useState([{}]);
   const [bestSelling, setBestSelling] = useState([{}]);
-  const [page, setPage] = useState([{}]);
+  const [page, setPage] = useState(1);
   const [category, setCategory] = useState([{}]);
   const [categories, setCategories] = useState([]);
   const [fname, setFname] = useState("");

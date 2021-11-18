@@ -23,7 +23,7 @@ const ProductsByCategory = () => {
         console.log(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [productsByCat]);
 
   return (
     <Container className="d-flex flex-wrap flex-row">

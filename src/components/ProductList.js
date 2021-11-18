@@ -8,14 +8,16 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Paginate from "../components/Paginate";
 
 const ProductList = () => {
-  const { products, setProducts } = useContext(ShopContext);
+  const { products, setProducts, page, setPage } = useContext(ShopContext);
   useEffect(() => {
     axios(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/all`)
       .then((res) => res.data)
       .then((res) => {
         setProducts(res.data);
+        setPage(Math.ceil(res.data.length / 12));
       })
       .catch((err) => console.log(err));
   }, [products]);

@@ -17,7 +17,7 @@ const AllCategories = () => {
       .then((res) => {
         setCategories(res.data);
       });
-  }, []);
+  }, [categories]);
   return (
     <Container className="d-flex flex-wrap flex-row">
       {categories.map((category, index) => {

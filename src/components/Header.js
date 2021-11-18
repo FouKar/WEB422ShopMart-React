@@ -31,7 +31,10 @@ export const Header = () => {
             <Nav.Link href="/products/all" className="mx-auto navLinkText">
               Products
             </Nav.Link>
-            <Nav.Link href="#link" className="mx-auto navLinkText">
+            <Nav.Link
+              href="/products/categories"
+              className="mx-auto navLinkText"
+            >
               Categories
             </Nav.Link>
             <Nav.Link href="/register" className="mx-auto navLinkText">

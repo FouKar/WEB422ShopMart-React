@@ -12,6 +12,7 @@ import ProductDescription from "./pages/ProductDescription";
 import ProductListing from "./pages/ProductListing";
 import RegistrationPage from "./components/RegistrationForm";
 import ShopContext from "./context/ShopContext";
+import CategoryProducts from "./pages/CategoryProducts";
 
 function App() {
   const [products, setProducts] = useState([{}]);
@@ -25,6 +26,7 @@ function App() {
     bestseller: "",
     photo: "",
   });
+  const [productsByCat, setProductsByCat] = useState([{}]);
   const [bestSelling, setBestSelling] = useState([{}]);
   const [page, setPage] = useState([{}]);
   const [category, setCategory] = useState([{}]);
@@ -47,6 +49,8 @@ function App() {
     <Router>
       <ShopContext.Provider
         value={{
+          productsByCat,
+          setProductsByCat,
           product,
           setProduct,
           products,
@@ -101,6 +105,10 @@ function App() {
           <Route
             path="/products/categories"
             element={<ProductCategory />}
+          ></Route>
+          <Route
+            path="/products/productsByCategory/:category"
+            element={<CategoryProducts />}
           ></Route>
           <Route
             path="/product/details/:id"

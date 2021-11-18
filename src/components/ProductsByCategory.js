@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
+import axios from "axios";
 import ShopContext from "../context/ShopContext";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -7,20 +8,26 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { useParams } from "react-router";
 
-const AllCategories = () => {
-  const { categories, setCategories } = useContext(ShopContext);
+const ProductsByCategory = () => {
+  const { category } = useParams();
+  const { productsByCat, setProductsByCat } = useContext(ShopContext);
   useEffect(() => {
-    axios(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/categories`)
+    axios(
+      `${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/productsByCategory/${category}`
+    )
       .then((res) => res.data)
       .then((res) => {
-        setCategories(res.data);
-      });
+        setProductsByCat(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
   }, []);
+
   return (
     <Container className="d-flex flex-wrap flex-row">
-      {categories.map((category, index) => {
+      {productsByCat.map((product, index) => {
         return (
           <Card
             sx={{ maxWidth: 345 }}
@@ -28,17 +35,28 @@ const AllCategories = () => {
           >
             <CardActionArea className="">
               <Link
-                to={`/products/productsByCategory/${category}`}
+                to={`/products/product/${product._id}`}
                 className="linkCard"
               >
                 <CardMedia
                   component="img"
-                  image={`/${index}cat.jpeg`}
-                  alt={category}
+                  image={product.photo}
+                  alt={product.name}
                 />
                 <CardContent className="text-center cardContent">
                   <Typography variant="h6" color="text.secondary">
-                    {category}
+                    {product.name}
+                  </Typography>
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    className="priceCard"
+                  >
+                    ${product.price}
+                  </Typography>
+                  <Typography variant="caption" color="#8d8d8d">
+                    Featured In {product.category}
                   </Typography>
                 </CardContent>
               </Link>
@@ -50,4 +68,4 @@ const AllCategories = () => {
   );
 };
 
-export default AllCategories;
+export default ProductsByCategory;

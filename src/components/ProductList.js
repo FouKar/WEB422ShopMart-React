@@ -11,16 +11,16 @@ import { Link } from "react-router-dom";
 import Paginate from "../components/Paginate";
 
 const ProductList = () => {
-  const { products, setProducts, page, setPage } = useContext(ShopContext);
+  const { products, setProducts, pages, setPages } = useContext(ShopContext);
   useEffect(() => {
     axios(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/all`)
       .then((res) => res.data)
       .then((res) => {
-        setProducts(res.data);
-        setPage(Math.ceil(res.data.length / 12));
+        setProducts(res.data.slice(0, 12));
+        setPages(Math.ceil(res.data.length / 12));
       })
       .catch((err) => console.log(err));
-  }, [products]);
+  }, []);
   return (
     <Container className="d-flex flex-wrap flex-row">
       {products.map((product, index) => {

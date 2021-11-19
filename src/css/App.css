@@ -141,3 +141,10 @@ body {
 .linkCard {
   text-decoration: none !important;
 }
+.pCat {
+  text-decoration: none !important;
+  color: #3b5998;
+}
+body {
+  padding-bottom: 0;
+}

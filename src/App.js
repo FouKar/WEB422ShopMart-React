@@ -29,6 +29,7 @@ function App() {
   const [productsByCat, setProductsByCat] = useState([{}]);
   const [bestSelling, setBestSelling] = useState([{}]);
   const [page, setPage] = useState(1);
+  const [pages, setPages] = useState(1);
   const [category, setCategory] = useState([{}]);
   const [categories, setCategories] = useState([]);
   const [fname, setFname] = useState("");
@@ -59,6 +60,8 @@ function App() {
           setBestSelling,
           page,
           setPage,
+          pages,
+          setPages,
           category,
           setCategory,
           fname,

@@ -24,12 +24,13 @@ const BestSeller = () => {
     <Container>
       <div className="title_lines">Bestsellers</div>
       <Splide
-        className="mb-5 mt-3"
+        className="mb-5 mt-3 mx-auto"
         options={{
           type: "loop",
           gap: "2rem",
           autowidth: true,
           autoheight: true,
+
           perPage: 3,
           perMove: 1,
 

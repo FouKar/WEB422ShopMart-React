@@ -26,19 +26,19 @@ export const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav" className="">
           <Nav className=" headerLink  mx-auto">
             <Nav.Link href="/" className="mx-auto navLinkText">
-              Home
+              HOME
             </Nav.Link>
             <Nav.Link href="/products/all" className="mx-auto navLinkText">
-              Products
+              PRODUCTS
             </Nav.Link>
             <Nav.Link
               href="/products/categories"
               className="mx-auto navLinkText"
             >
-              Categories
+              CATEGORIES
             </Nav.Link>
             <Nav.Link href="/register" className="mx-auto navLinkText">
-              Registration
+              REGISTRATION
             </Nav.Link>
             <Form className="d-flex  mx-auto">
               <FormControl

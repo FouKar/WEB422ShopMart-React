@@ -25,16 +25,18 @@ const ProductCategorize = () => {
         {categories.map((cat, index) => {
           while (index < 6) {
             return (
-              <div className="d-flex flex-column align-items-center ">
-                <img
-                  src={`/${index}cat.jpeg`}
-                  height="180px"
-                  width="180px"
-                  alt="category Image"
-                  className="catImg"
-                />
-                <h5>{cat}</h5>
-              </div>
+              <Link to={`/products/productsByCategory/${cat}`} className="pCat">
+                <div className="d-flex flex-column align-items-center">
+                  <img
+                    src={`/${index}cat.jpeg`}
+                    height="180px"
+                    width="180px"
+                    alt="category Image"
+                    className="catImg"
+                  />
+                  <h5>{cat}</h5>
+                </div>
+              </Link>
             );
           }
         })}

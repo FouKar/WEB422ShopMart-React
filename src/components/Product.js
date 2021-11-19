@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useContext } from "react";
 import axios from "axios";
 import ShopContext from "../context/ShopContext";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Button, Container } from "@mui/material";
 const Product = () => {
   const { id } = useParams();
   const { product, setProduct } = useContext(ShopContext);
@@ -26,7 +26,7 @@ const Product = () => {
         ></img>
       </Grid>
       <Grid item md={1}></Grid>
-      <Grid item s={12} md={5} align="center">
+      <Grid item s={12} md={6} align="center">
         <Typography variant="h4" gutterbottom>
           {product.name}
         </Typography>
@@ -48,7 +48,28 @@ const Product = () => {
         <Typography variant="h6" color="#0d47a1" gutterbottom mt={2}>
           Quantity: {product.quantity} in stock.
         </Typography>
-        <Grid item md={1}></Grid>
+        <Grid container md={3}></Grid>
+        <Grid
+          container
+          s={12}
+          md={6}
+          align="center"
+          justifyContent="center"
+          spacing={0.5}
+          mt={2}
+        >
+          <Grid item s={12} md={6} align="right">
+            <Button variant="contained" color="error">
+              Checkout
+            </Button>
+          </Grid>
+          <Grid item s={12} md={6} align="left">
+            <Button variant="contained" color="success">
+              Add to Cart
+            </Button>
+          </Grid>
+        </Grid>
+        <Grid container md={3}></Grid>
       </Grid>
     </Grid>
   );

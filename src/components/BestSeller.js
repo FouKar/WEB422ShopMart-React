@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container } from "react-bootstrap";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import ShopContext from "../context/ShopContext";
+import { Link } from "react-router-dom";
 require("dotenv").config({ path: "../../.env" });
 
 const BestSeller = () => {
@@ -53,12 +54,14 @@ const BestSeller = () => {
         {bestSelling.map((product, index) => {
           return (
             <SplideSlide>
-              <img
-                src={product.photo}
-                alt={product.name}
-                width="300"
-                height="300"
-              />
+              <Link to={`/products/product/${product._id}`}>
+                <img
+                  src={product.photo}
+                  alt={product.name}
+                  width="300"
+                  height="300"
+                />
+              </Link>
             </SplideSlide>
           );
         })}

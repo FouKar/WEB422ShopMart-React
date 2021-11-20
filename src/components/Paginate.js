@@ -28,6 +28,7 @@ const Paginate = () => {
       showLastButton
       onChange={handleChange}
       color="primary"
+      defaultPage={1}
       className=" d-flex flex-row justify-content-center"
       mb={5}
     />

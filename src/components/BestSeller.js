@@ -25,13 +25,11 @@ const BestSeller = () => {
     <Container>
       <div className="title_lines">Bestsellers</div>
       <Splide
-        className="mb-5 mt-3"
         options={{
           type: "loop",
           gap: "2rem",
           autowidth: true,
           autoheight: true,
-
           perPage: 3,
           perMove: 1,
 
@@ -58,8 +56,8 @@ const BestSeller = () => {
                 <img
                   src={product.photo}
                   alt={product.name}
-                  width="300"
-                  height="300"
+                  width="350"
+                  height="350"
                 />
               </Link>
             </SplideSlide>

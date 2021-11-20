@@ -11,13 +11,15 @@ import { Link } from "react-router-dom";
 import Paginate from "../components/Paginate";
 
 const ProductList = () => {
-  const { products, setProducts, pages, setPages } = useContext(ShopContext);
+  const { products, setProducts, pages, page, setPage, setPages } =
+    useContext(ShopContext);
   useEffect(() => {
     axios(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/all`)
       .then((res) => res.data)
       .then((res) => {
         setProducts(res.data.slice(0, 12));
         setPages(Math.ceil(res.data.length / 12));
+        setPage(1);
       })
       .catch((err) => console.log(err));
   }, []);

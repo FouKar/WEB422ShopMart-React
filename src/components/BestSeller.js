@@ -22,7 +22,7 @@ const BestSeller = () => {
   }, []);
 
   return (
-    <Container>
+    <>
       <div className="title_lines">Bestsellers</div>
       <Splide
         options={{
@@ -64,7 +64,7 @@ const BestSeller = () => {
           );
         })}
       </Splide>
-    </Container>
+    </>
   );
 };
 

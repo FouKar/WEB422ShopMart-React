@@ -25,7 +25,7 @@ const BestSeller = () => {
     <Container>
       <div className="title_lines">Bestsellers</div>
       <Splide
-        className="mb-5 mt-3 mx-auto"
+        className="mb-5 mt-3"
         options={{
           type: "loop",
           gap: "2rem",

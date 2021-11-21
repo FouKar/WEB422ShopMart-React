@@ -11,7 +11,6 @@ const productListing = () => {
       <ProductList />
       <Paginate />
       <Footer />
-      );
     </>
   );
 };

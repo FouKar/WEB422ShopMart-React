@@ -56,8 +56,8 @@ const BestSeller = () => {
                 <img
                   src={product.photo}
                   alt={product.name}
-                  width="375"
-                  height="375"
+                  width="400"
+                  height="400"
                 />
               </Link>
             </SplideSlide>
